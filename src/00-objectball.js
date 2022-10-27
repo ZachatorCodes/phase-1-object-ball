@@ -118,10 +118,9 @@ function gameObject() {
   
   // takes in an argument of a player's name and returns the number of points scored for that player
   function numPointsScored(playerName) {
-    const gameObj = gameObject(); // Creates Object based on info provided.
+    const gameObj = gameObject();
     for (const gameKey in gameObj) {
       const teamObj = gameObj[gameKey];
-      // Creates an Object that is one layer deeper than the gameObj. Team Obj.
       for (const teamKey in teamObj) {
         if (teamKey === "players") {
           const playerObj = teamObj[teamKey];
