@@ -149,3 +149,20 @@ function shoeSize(playerName) {
   }
   return "Cannot find player";
 }
+
+// that takes in an argument of the team name and returns an array of that teams colors
+function teamColors(teamName) {
+  const gameObj = gameObject();
+  for (const team in gameObj) {
+    const teamObj = gameObj[team];
+    for (const key in teamObj) {
+      if (key === "teamName") {
+        const team = teamObj[key];
+        if (team === teamName) {
+          return(teamObj["colors"]);
+        }
+      }
+    }
+  }
+  return "Team not found";
+}
