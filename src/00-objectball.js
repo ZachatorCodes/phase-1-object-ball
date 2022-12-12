@@ -12,7 +12,7 @@ function gameObject() {
           assists: 12,
           steals: 3,
           blocks: 1,
-          slamDunks: 1
+          slamDunks: 1,
         },
         "Reggie Evans": {
           number: 30,
@@ -22,7 +22,7 @@ function gameObject() {
           assists: 12,
           steals: 12,
           blocks: 12,
-          slamDunks: 7
+          slamDunks: 7,
         },
         "Brook Lopez": {
           number: 11,
@@ -32,7 +32,7 @@ function gameObject() {
           assists: 10,
           steals: 3,
           blocks: 1,
-          slamDunks: 15
+          slamDunks: 15,
         },
         "Mason Plumlee": {
           number: 1,
@@ -42,7 +42,7 @@ function gameObject() {
           assists: 6,
           steals: 3,
           blocks: 8,
-          slamDunks: 5
+          slamDunks: 5,
         },
         "Jason Terry": {
           number: 31,
@@ -52,9 +52,9 @@ function gameObject() {
           assists: 2,
           steals: 4,
           blocks: 11,
-          slamDunks: 1
-        }
-      }
+          slamDunks: 1,
+        },
+      },
     },
     away: {
       teamName: "Charlotte Hornets",
@@ -68,7 +68,7 @@ function gameObject() {
           assists: 1,
           steals: 2,
           blocks: 7,
-          slamDunks: 2
+          slamDunks: 2,
         },
         "Bismak Biyombo": {
           number: 0,
@@ -78,7 +78,7 @@ function gameObject() {
           assists: 7,
           steals: 7,
           blocks: 15,
-          slamDunks: 10
+          slamDunks: 10,
         },
         "DeSagna Diop": {
           number: 2,
@@ -88,7 +88,7 @@ function gameObject() {
           assists: 12,
           steals: 4,
           blocks: 5,
-          slamDunks: 5
+          slamDunks: 5,
         },
         "Ben Gordon": {
           number: 8,
@@ -98,7 +98,7 @@ function gameObject() {
           assists: 2,
           steals: 1,
           blocks: 1,
-          slamDunks: 0
+          slamDunks: 0,
         },
         "Brendan Haywood": {
           number: 33,
@@ -108,14 +108,14 @@ function gameObject() {
           assists: 12,
           steals: 22,
           blocks: 5,
-          slamDunks: 12
-        }
-      }
-    }
-  }
+          slamDunks: 12,
+        },
+      },
+    },
+  };
   return game;
 }
-  
+
 // takes in an argument of a player's name and returns the number of points scored for that player
 function numPointsScored(playerName) {
   const gameObj = gameObject();
@@ -159,10 +159,21 @@ function teamColors(teamName) {
       if (key === "teamName") {
         const team = teamObj[key];
         if (team === teamName) {
-          return(teamObj["colors"]);
+          return teamObj["colors"];
         }
       }
     }
   }
   return "Team not found";
+}
+
+function teamNames() {
+  const gameObj = gameObject();
+  const teamArray = [];
+  for (const team in gameObj) {
+    const teamObj = gameObj[team];
+    const teamName = teamObj.teamName;
+    teamArray.push(teamName);
+  }
+  return teamArray;
 }
